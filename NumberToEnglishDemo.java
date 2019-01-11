@@ -170,11 +170,14 @@ public class NumberToEnglishDemo {
 	 */
 	private String getHundreds(String currentNum) {
 		String returnVal = "";
+		if(currentNum.length() <=3)
+		{
 		int indexPos = Integer
 				.parseInt(Character.toString(currentNum.charAt(0)));
 		if (indexPos > 0) {
 			returnVal = lowVals[indexPos];
 			returnVal = returnVal + " " + largeVals[0];
+		}
 		}
 		return returnVal;
 	}
@@ -188,6 +191,8 @@ public class NumberToEnglishDemo {
 	 */
 	private String getThousands(String currentNum) {
 		String returnVal = "";
+		if(currentNum.length() <=6)
+		{
 		int thousandsPortion = currentNum.length() - 3;
 		int indexPos;
 		String target = currentNum.substring(0, thousandsPortion);
@@ -211,6 +216,7 @@ public class NumberToEnglishDemo {
 					+ " "
 					+ largeVals[1] + " ";
 		}
+		}
 		return returnVal;
 	}
 
@@ -223,6 +229,8 @@ public class NumberToEnglishDemo {
 	 */
 	private String getMillions(String currentNum) {
 		String returnVal = "";
+		if(currentNum.length() <=9)
+		{
 		int millionsPortion = currentNum.length() - 6;
 		int indexPos;
 		String target = currentNum.substring(0, millionsPortion);
@@ -243,6 +251,7 @@ public class NumberToEnglishDemo {
 					+ " and "
 					+ this.getDigits(digitsPortion)
 					+ " " + largeVals[2] + " ";
+		}
 		}
 		return returnVal;
 	}
