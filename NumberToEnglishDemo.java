@@ -82,7 +82,7 @@ public class NumberToEnglishDemo {
 	 * @param str
 	 * @return
 	 */
-	public static boolean isNum(String str)
+	private boolean isNum(String str)
 	{
 	  NumberFormat formatter = NumberFormat.getInstance();
 	  ParsePosition pos = new ParsePosition(0);
